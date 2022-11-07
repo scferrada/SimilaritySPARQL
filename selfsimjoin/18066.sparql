@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12  ?var13 ( COUNT ( ?var14  ) AS  ?var15  ) WHERE {   ?var11  <http://www.wikidata.org/prop/P972>  [  <http://www.wikidata.org/prop/statement/P972>  <http://www.wikidata.org/entity/Q28781198>  ] .   ?var11  <http://wikiba.se/ontology#sitelinks> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .   ?var11  <http://wikiba.se/ontology#statements>  ?var12 .   ?var11  <http://wikiba.se/ontology#identifiers>  ?var13 .   ?var16  <http://wikiba.se/ontology#claim>  ?var17 .   ?var11  ?var17  ?var18 .   ?var18  <http://www.w3.org/ns/prov#wasDerivedFrom>  ?var14 . } GROUP BY  ?var11  ?var12  ?var13   }
+SIMILARITY JOIN ON ( ?var15 ) ( ?var25 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22  ?var23 ( COUNT ( ?var24  ) AS  ?var25  ) WHERE {   ?var21  <http://www.wikidata.org/prop/P972>  [  <http://www.wikidata.org/prop/statement/P972>  <http://www.wikidata.org/entity/Q28781198>  ] .   ?var21  <http://wikiba.se/ontology#sitelinks> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .   ?var21  <http://wikiba.se/ontology#statements>  ?var22 .   ?var21  <http://wikiba.se/ontology#identifiers>  ?var23 .   ?var26  <http://wikiba.se/ontology#claim>  ?var27 .   ?var21  ?var27  ?var28 .   ?var28  <http://www.w3.org/ns/prov#wasDerivedFrom>  ?var24 . } GROUP BY  ?var21  ?var22  ?var23   }
+}

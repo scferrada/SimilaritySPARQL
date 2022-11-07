@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 ?var14 ?var15 ?var16 WHERE  { ?var11 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11344> ;      <http://www.wikidata.org/prop/direct/P2101> ?var13 ;      <http://www.wikidata.org/prop/direct/P1108> ?var14 ;      <http://www.wikidata.org/prop/direct/P2054> ?var15 ;      <http://www.wikidata.org/prop/direct/P2067> ?var16   FILTER ( ?var11 = "beryllium" )  } LIMIT  100  }
+SIMILARITY JOIN ON ( ?var13, ?var14, ?var15 ) ( ?var23, ?var24, ?var25 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 ?var24 ?var25 ?var26 WHERE  { ?var21 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11344> ;      <http://www.wikidata.org/prop/direct/P2101> ?var23 ;      <http://www.wikidata.org/prop/direct/P1108> ?var24 ;      <http://www.wikidata.org/prop/direct/P2054> ?var25 ;      <http://www.wikidata.org/prop/direct/P2067> ?var26   FILTER ( ?var21 = "beryllium" )  } LIMIT  100  }
+}

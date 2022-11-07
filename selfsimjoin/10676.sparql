@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT ?var11 (COUNT(DISTINCT ?var11) AS ?var12) WHERE  { <http://www.wikidata.org/entity/Q11424>        ?var11 ?var13   FILTER ( ?var12 > 10 )  } GROUP BY ?var11 LIMIT  5000  }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT ?var21 (COUNT(DISTINCT ?var21) AS ?var22) WHERE  { <http://www.wikidata.org/entity/Q11424>        ?var21 ?var23   FILTER ( ?var22 > 10 )  } GROUP BY ?var21 LIMIT  5000  }
+}

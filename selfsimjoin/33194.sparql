@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT ?var11 ?var12 WHERE  { ?var11 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> ;      <http://www.wikidata.org/prop/direct/P577> ?var13 ;      <http://www.wikidata.org/prop/direct/P2142> ?var12   FILTER ( ( ?var13 >= "2017-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ) && ( ?var13 <= "2017-12-31T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ) )  }  }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT ?var21 ?var22 WHERE  { ?var21 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> ;      <http://www.wikidata.org/prop/direct/P577> ?var23 ;      <http://www.wikidata.org/prop/direct/P2142> ?var22   FILTER ( ( ?var23 >= "2017-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ) && ( ?var23 <= "2017-12-31T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ) )  }  }
+}

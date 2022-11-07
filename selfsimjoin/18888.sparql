@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT ?var11 (COUNT(DISTINCT ?var12) AS ?var13) WHERE  { ?var14 <http://www.wikidata.org/prop/P175> ?var12    { BIND("P1441" AS ?var11)     ?var12 <http://www.wikidata.org/prop/qualifier/P1441> ?var15    }   UNION    { BIND("P642" AS ?var11)     ?var12 <http://www.wikidata.org/prop/qualifier/P642> ?var15    }  } GROUP BY ?var11  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT ?var21 (COUNT(DISTINCT ?var22) AS ?var23) WHERE  { ?var24 <http://www.wikidata.org/prop/P175> ?var22    { BIND("P1441" AS ?var21)     ?var22 <http://www.wikidata.org/prop/qualifier/P1441> ?var25    }   UNION    { BIND("P642" AS ?var21)     ?var22 <http://www.wikidata.org/prop/qualifier/P642> ?var25    }  } GROUP BY ?var21  }
+}

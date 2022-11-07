@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (AVG(?var12) AS ?var13) WHERE  { ?var14 <http://www.wikidata.org/prop/direct/P123> ?var11 ;      <http://www.wikidata.org/prop/direct/P1104> ?var12  } GROUP BY ?var11  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (AVG(?var22) AS ?var23) WHERE  { ?var24 <http://www.wikidata.org/prop/direct/P123> ?var21 ;      <http://www.wikidata.org/prop/direct/P1104> ?var22  } GROUP BY ?var21  }
+}

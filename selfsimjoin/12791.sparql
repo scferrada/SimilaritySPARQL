@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 (COUNT(DISTINCT ?var13) AS ?var14) WHERE  { { BIND(replace(str(?var15), "string1", "XXXX") AS ?var12)    BIND(lang(?var15) AS ?var11)   }   ?var13 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q22160401> ;      <http://www.w3.org/2000/01/rdf-schema#label> ?var15  } GROUP BY ?var11 ?var12  }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 (COUNT(DISTINCT ?var23) AS ?var24) WHERE  { { BIND(replace(str(?var25), "string1", "XXXX") AS ?var22)    BIND(lang(?var25) AS ?var21)   }   ?var23 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q22160401> ;      <http://www.w3.org/2000/01/rdf-schema#label> ?var25  } GROUP BY ?var21 ?var22  }
+}

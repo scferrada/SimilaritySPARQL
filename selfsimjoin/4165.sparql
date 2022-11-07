@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (COUNT(?var12) AS ?var13) WHERE  { BIND(if(( ?var14 < "1600-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "string1", if(( ?var14 < "1700-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1600-tal", if(( ?var14 < "1800-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1700-tal", if(( ?var14 < "1900-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1800-tal", if(( ?var14 < "2000-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1900-tal", "2000-tal"))))) AS ?var11)   ?var12 <http://www.wikidata.org/prop/direct/P3219> ?var15 ;      <http://www.wikidata.org/prop/direct/P569> ?var14  } GROUP BY ?var11  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (COUNT(?var22) AS ?var23) WHERE  { BIND(if(( ?var24 < "1600-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "string1", if(( ?var24 < "1700-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1600-tal", if(( ?var24 < "1800-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1700-tal", if(( ?var24 < "1900-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1800-tal", if(( ?var24 < "2000-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ), "1900-tal", "2000-tal"))))) AS ?var21)   ?var22 <http://www.wikidata.org/prop/direct/P3219> ?var25 ;      <http://www.wikidata.org/prop/direct/P569> ?var24  } GROUP BY ?var21  }
+}

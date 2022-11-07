@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {   VALUES (  ?var11  ) {    (  "en" )    (  "nl" )    (  "de" )   }   ?var12  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://wikiba.se/ontology#Property> ;  <http://www.w3.org/2000/01/rdf-schema#label>  ?var14Label .  FILTER (  ( (  LANG (  ?var14Label  )  =  ?var11  ) )  ) . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {   VALUES (  ?var21  ) {    (  "en" )    (  "nl" )    (  "de" )   }   ?var22  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://wikiba.se/ontology#Property> ;  <http://www.w3.org/2000/01/rdf-schema#label>  ?var24Label .  FILTER (  ( (  LANG (  ?var24Label  )  =  ?var21  ) )  ) . } GROUP BY  ?var21   }
+}

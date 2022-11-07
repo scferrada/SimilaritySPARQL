@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT * WHERE {   ?var11  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q968159> .   ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var12Label .  FILTER (  ( (  LANG (  ?var12Label  )  =  "nl" ) )  ) .  {   SELECT( COUNT ( ?var13  ) AS  ?var14  )   WHERE   {     ?var13  <http://www.wikidata.org/prop/direct/P135>  ?var11 .   }  } } LIMIT 1000  }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT * WHERE {   ?var21  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q968159> .   ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var22Label .  FILTER (  ( (  LANG (  ?var22Label  )  =  "nl" ) )  ) .  {   SELECT( COUNT ( ?var23  ) AS  ?var24  )   WHERE   {     ?var23  <http://www.wikidata.org/prop/direct/P135>  ?var21 .   }  } } LIMIT 1000  }
+}

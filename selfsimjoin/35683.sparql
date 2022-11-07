@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( DISTINCT  ?var12  ) AS  ?var13  ) WHERE { } GROUP BY  ?var11  LIMIT 10  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( DISTINCT  ?var22  ) AS  ?var23  ) WHERE { } GROUP BY  ?var21  LIMIT 10  }
+}

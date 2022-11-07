@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT * WHERE  {  { { SELECT ?var11 ?var12 (COUNT(?var12) AS ?var13)      WHERE       { BIND("string1" AS ?var11)        ?var14 <http://www.wikidata.org/prop/direct/P2410> ?var15 ;           <http://www.wikidata.org/prop/direct/P703> ?var12       }      GROUP BY ?var12 ?var11     }    }   UNION    { { SELECT ?var11 ?var12 (COUNT(?var12) AS ?var13)      WHERE       { BIND("Reactome" AS ?var11)        ?var14 <http://www.wikidata.org/prop/direct/P3937> ?var15 ;           <http://www.wikidata.org/prop/direct/P703> ?var12       }      GROUP BY ?var12 ?var11     }    }  }  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT * WHERE  {  { { SELECT ?var21 ?var22 (COUNT(?var22) AS ?var23)      WHERE       { BIND("string1" AS ?var21)        ?var24 <http://www.wikidata.org/prop/direct/P2410> ?var25 ;           <http://www.wikidata.org/prop/direct/P703> ?var22       }      GROUP BY ?var22 ?var21     }    }   UNION    { { SELECT ?var21 ?var22 (COUNT(?var22) AS ?var23)      WHERE       { BIND("Reactome" AS ?var21)        ?var24 <http://www.wikidata.org/prop/direct/P3937> ?var25 ;           <http://www.wikidata.org/prop/direct/P703> ?var22       }      GROUP BY ?var22 ?var21     }    }  }  }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12Label  ?var13  WHERE {   ?var11  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q4830453> .   ?var11  <http://www.wikidata.org/prop/direct/P2139>  ?var13 .   ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var12Label .  FILTER (  (  STRSTARTS (  ?var12Label , "bosch" )  )  ) . } LIMIT 10  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22Label  ?var23  WHERE {   ?var21  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q4830453> .   ?var21  <http://www.wikidata.org/prop/direct/P2139>  ?var23 .   ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var22Label .  FILTER (  (  STRSTARTS (  ?var22Label , "bosch" )  )  ) . } LIMIT 10  }
+}

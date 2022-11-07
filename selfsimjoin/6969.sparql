@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( DISTINCT  ?var12  ) AS  ?var13  ) WHERE {  SELECT ?var11  ?var12   WHERE  {    VALUES (  ?var11  ?var12  ?var14  ) {     (  "James" "country a" "70" )     (  "Mary" "worldwide" "71" )     (  "Mary" "worldwide" "72" )     (  "Mary" "worldwide" "73" )     (  "Mary" "country b" "76" )    }  } } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( DISTINCT  ?var22  ) AS  ?var23  ) WHERE {  SELECT ?var21  ?var22   WHERE  {    VALUES (  ?var21  ?var22  ?var24  ) {     (  "James" "country a" "70" )     (  "Mary" "worldwide" "71" )     (  "Mary" "worldwide" "72" )     (  "Mary" "worldwide" "73" )     (  "Mary" "country b" "76" )    }  } } GROUP BY  ?var21   }
+}

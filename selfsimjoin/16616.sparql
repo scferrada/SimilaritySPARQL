@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT( COUNT ( ?var11  ) AS  ?var12  ) ?var13  WHERE {   BIND (  REPLACE (  STRAFTER (  ?var14 , "Saint-" ) , "-.*$", "", "i" )  AS  ?var13 ).   ?var11  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q484170> .   ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var14 .  FILTER (  ( (  LANG (  ?var14  )  =  "fr" ) )  ) .  FILTER (  (  REGEX (  ?var14 , "^saint-", "i" )  )  ) . } GROUP BY  ?var13   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT( COUNT ( ?var21  ) AS  ?var22  ) ?var23  WHERE {   BIND (  REPLACE (  STRAFTER (  ?var24 , "Saint-" ) , "-.*$", "", "i" )  AS  ?var23 ).   ?var21  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q484170> .   ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var24 .  FILTER (  ( (  LANG (  ?var24  )  =  "fr" ) )  ) .  FILTER (  (  REGEX (  ?var24 , "^saint-", "i" )  )  ) . } GROUP BY  ?var23   }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT (* ) AS  ?var12  ) WHERE {  SELECT ?var13  ?var14  ?var11   WHERE  {    ?var15  <http://wikiba.se/ontology#statementValue>  ?var16 .    ?var13  ?var16  ?var14 .    ?var14  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  ?var11 .  }  LIMIT 10000 } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT (* ) AS  ?var22  ) WHERE {  SELECT ?var23  ?var24  ?var21   WHERE  {    ?var25  <http://wikiba.se/ontology#statementValue>  ?var26 .    ?var23  ?var26  ?var24 .    ?var24  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  ?var21 .  }  LIMIT 10000 } GROUP BY  ?var21   }
+}

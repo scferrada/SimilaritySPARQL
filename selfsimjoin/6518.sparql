@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (  AVG ( ?var12  ) AS  ?var13  ) WHERE {  {   SELECT ?var11  ?var14 ( COUNT ( ?var15  ) AS  ?var12  )   WHERE   {     ?var14  <http://www.wikidata.org/prop/direct/P17>  ?var11 ;  <http://www.wikidata.org/prop/direct/P190>  ?var15 .   }   GROUP BY  ?var11  ?var14   } } GROUP BY  ?var11   HAVING  ( ( COUNT ( ?var14  ) >= "10"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )    }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (  AVG ( ?var22  ) AS  ?var23  ) WHERE {  {   SELECT ?var21  ?var24 ( COUNT ( ?var25  ) AS  ?var22  )   WHERE   {     ?var24  <http://www.wikidata.org/prop/direct/P17>  ?var21 ;  <http://www.wikidata.org/prop/direct/P190>  ?var25 .   }   GROUP BY  ?var21  ?var24   } } GROUP BY  ?var21   HAVING  ( ( COUNT ( ?var24  ) >= "10"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )    }
+}

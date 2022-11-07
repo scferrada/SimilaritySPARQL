@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {  SELECT ?var11  ?var12   WHERE  {    VALUES (  ?var11  ?var12  ) {     (  "a" "red" )     (  "b" "yellow" )     (  "b" "yellow" )     (  "b" "yellow" )     (  "b" "green" )    }  } } GROUP BY  ?var12  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {  SELECT ?var21  ?var22   WHERE  {    VALUES (  ?var21  ?var22  ) {     (  "a" "red" )     (  "b" "yellow" )     (  "b" "yellow" )     (  "b" "yellow" )     (  "b" "green" )    }  } } GROUP BY  ?var22  ?var21   }
+}

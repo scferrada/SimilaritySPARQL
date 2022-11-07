@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {  {    BIND (  "string1"@fr  AS  ?var14 ).    ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var14 .    ?var11  ?var15  ?var12 .  }   UNION  {    BIND (  "string2"@fr  AS  ?var14 ).    ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var14 .    ?var11  ?var15  ?var12 .  } } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {  {    BIND (  "string1"@fr  AS  ?var24 ).    ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var24 .    ?var21  ?var25  ?var22 .  }   UNION  {    BIND (  "string2"@fr  AS  ?var24 ).    ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var24 .    ?var21  ?var25  ?var22 .  } } GROUP BY  ?var21   }
+}

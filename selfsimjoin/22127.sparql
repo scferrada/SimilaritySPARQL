@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( DISTINCT  ?var12  ) AS  ?var13  ) WHERE {   ?var11  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q5> .   ?var11  <http://www.wikidata.org/prop/direct/P21>  <http://www.wikidata.org/entity/Q6581072> .   MINUS   {     ?var11  <http://www.wikidata.org/prop/P106>  [] .     ?var11  <http://www.wikidata.org/prop/P569>  [] .     ?var11  <http://www.wikidata.org/prop/P19>  [] .   }   ?var14  <http://schema.org/about>  ?var11 .   ?var14  <http://schema.org/isPartOf>  ?var15 .  FILTER (  (  REGEX (  STR (  ?var15  ) , "string1" )  )  ) . } GROUP BY  ?var11   HAVING  ( (  ?var13  >= "4"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )   LIMIT 200  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( DISTINCT  ?var22  ) AS  ?var23  ) WHERE {   ?var21  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q5> .   ?var21  <http://www.wikidata.org/prop/direct/P21>  <http://www.wikidata.org/entity/Q6581072> .   MINUS   {     ?var21  <http://www.wikidata.org/prop/P106>  [] .     ?var21  <http://www.wikidata.org/prop/P569>  [] .     ?var21  <http://www.wikidata.org/prop/P19>  [] .   }   ?var24  <http://schema.org/about>  ?var21 .   ?var24  <http://schema.org/isPartOf>  ?var25 .  FILTER (  (  REGEX (  STR (  ?var25  ) , "string1" )  )  ) . } GROUP BY  ?var21   HAVING  ( (  ?var23  >= "4"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )   LIMIT 200  }
+}

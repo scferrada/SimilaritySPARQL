@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (COUNT(?var12) AS ?var13) WHERE  { ?var11 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> ;      <http://www.wikidata.org/prop/P39> ?var14 .   ?var14 <http://www.wikidata.org/prop/statement/P39> <http://www.wikidata.org/entity/Q11696> ;      <http://www.wikidata.org/prop/qualifier/P580> ?var15 ;      <http://www.wikidata.org/prop/qualifier/P1545> ?var16 .   ?var11 <http://www.wikidata.org/prop/direct/P40> ?var12 .   ?var12 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>   FILTER ( 1 < ?var13 )  } GROUP BY ?var11  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (COUNT(?var22) AS ?var23) WHERE  { ?var21 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> ;      <http://www.wikidata.org/prop/P39> ?var24 .   ?var24 <http://www.wikidata.org/prop/statement/P39> <http://www.wikidata.org/entity/Q11696> ;      <http://www.wikidata.org/prop/qualifier/P580> ?var25 ;      <http://www.wikidata.org/prop/qualifier/P1545> ?var26 .   ?var21 <http://www.wikidata.org/prop/direct/P40> ?var22 .   ?var22 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>   FILTER ( 1 < ?var23 )  } GROUP BY ?var21  }
+}

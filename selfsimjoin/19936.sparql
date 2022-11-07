@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 ?var14 ?var15 ?var16 ?var17 ?var18 WHERE  { ?var11 <http://www.w3.org/2000/01/rdf-schema#label> ?var19 ;      <http://www.wikidata.org/prop/direct/P2101> ?var12 ;      <http://www.wikidata.org/prop/direct/P2101> ?var13 ;      <http://www.wikidata.org/prop/direct/P1108> ?var14 ;      <http://www.wikidata.org/prop/direct/P2054> ?var15 ;      <http://www.wikidata.org/prop/direct/P2067> ?var16 ;      <http://www.wikidata.org/prop/direct/P274> ?var17 ;      <http://www.wikidata.org/prop/direct/P556> ?var18   FILTER ( lcase(?var19) = "nickel"@en )  }  }
+SIMILARITY JOIN ON ( ?var12, ?var13, ?var14, ?var15 ) ( ?var22, ?var23, ?var24, ?var25 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 ?var24 ?var25 ?var26 ?var27 ?var28 WHERE  { ?var21 <http://www.w3.org/2000/01/rdf-schema#label> ?var29 ;      <http://www.wikidata.org/prop/direct/P2101> ?var22 ;      <http://www.wikidata.org/prop/direct/P2101> ?var23 ;      <http://www.wikidata.org/prop/direct/P1108> ?var24 ;      <http://www.wikidata.org/prop/direct/P2054> ?var25 ;      <http://www.wikidata.org/prop/direct/P2067> ?var26 ;      <http://www.wikidata.org/prop/direct/P274> ?var27 ;      <http://www.wikidata.org/prop/direct/P556> ?var28   FILTER ( lcase(?var29) = "nickel"@en )  }  }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (COUNT(DISTINCT ?var12) AS ?var13) WHERE  { { BIND(year(?var14) AS ?var11)    ?var12 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q215380> ;       <http://www.wikidata.org/prop/direct/P571> ?var14   }   FILTER ( ?var14 > "1900-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> )  } GROUP BY ?var11 ?var12  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (COUNT(DISTINCT ?var22) AS ?var23) WHERE  { { BIND(year(?var24) AS ?var21)    ?var22 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q215380> ;       <http://www.wikidata.org/prop/direct/P571> ?var24   }   FILTER ( ?var24 > "1900-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> )  } GROUP BY ?var21 ?var22  }
+}

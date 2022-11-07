@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (  AVG ( ?var12  ) AS  ?var13  ) WHERE {   BIND (  STRLEN (  ?var14  )  AS  ?var12 ).   BIND (  (  <http://www.w3.org/2001/XMLSchema#integer>  ( (  YEAR (  ?var15  ) /"10"^^<http://www.w3.org/2001/XMLSchema#integer>  ) ) *"10"^^<http://www.w3.org/2001/XMLSchema#integer>  )  AS  ?var11 ).   ?var16  <http://www.wikidata.org/prop/direct/P497>  ?var17 ;  <http://www.wikidata.org/prop/direct/P569>  ?var15 ;  <http://www.w3.org/2000/01/rdf-schema#label>  ?var14 .  FILTER (  ( (  LANG (  ?var14  )  =  "zh-hant" ) )  ) . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (  AVG ( ?var22  ) AS  ?var23  ) WHERE {   BIND (  STRLEN (  ?var24  )  AS  ?var22 ).   BIND (  (  <http://www.w3.org/2001/XMLSchema#integer>  ( (  YEAR (  ?var25  ) /"10"^^<http://www.w3.org/2001/XMLSchema#integer>  ) ) *"10"^^<http://www.w3.org/2001/XMLSchema#integer>  )  AS  ?var21 ).   ?var26  <http://www.wikidata.org/prop/direct/P497>  ?var27 ;  <http://www.wikidata.org/prop/direct/P569>  ?var25 ;  <http://www.w3.org/2000/01/rdf-schema#label>  ?var24 .  FILTER (  ( (  LANG (  ?var24  )  =  "zh-hant" ) )  ) . } GROUP BY  ?var21   }
+}

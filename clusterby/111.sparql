@@ -1,0 +1,13 @@
+
+PREFIX sim:<http://sj.dcc.uchile.cl/sim#>
+PREFIX wdt:<http://www.wikidata.org/prop/direct/>
+SELECT * WHERE {
+	?id1 wdt:P1457 ?g1 ;
+		wdt:P2248 ?c1 ;
+		wdt:P2244 ?v1 ;
+		wdt:P2243 ?a1 ;
+		wdt:P2233 ?l1 ;
+		wdt:P4501 ?h1 .
+
+}
+CLUSTER BY ?g1 ?c1 ?v1 ?a1 ?l1 ?h1 WITH %s AS ?c

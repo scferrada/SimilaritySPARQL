@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT ?var11 ( COUNT ( ?var11  ) AS  ?var12  ) WHERE {   VALUES (  ?var11  ) {    (  <http://wikiba.se/ontology#DeprecatedRank>  )    (  <http://wikiba.se/ontology#NormalRank>  )   }   ?var13  <http://www.wikidata.org/prop/P699>  ?var14 .   ?var14  <http://wikiba.se/ontology#rank>  ?var11 . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT ?var21 ( COUNT ( ?var21  ) AS  ?var22  ) WHERE {   VALUES (  ?var21  ) {    (  <http://wikiba.se/ontology#DeprecatedRank>  )    (  <http://wikiba.se/ontology#NormalRank>  )   }   ?var23  <http://www.wikidata.org/prop/P699>  ?var24 .   ?var24  <http://wikiba.se/ontology#rank>  ?var21 . } GROUP BY  ?var21   }
+}

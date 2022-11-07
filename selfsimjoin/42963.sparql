@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (  AVG ( ?var12  ) AS  ?var13  ) WHERE {  {   SELECT(  STR (  YEAR (  ?var14  )  )  AS  ?var11  ) ?var12    WHERE   {     <http://www.wikidata.org/entity/Q30>  <http://www.wikidata.org/prop/P1082>  ?var15 .     ?var15  <http://www.wikidata.org/prop/statement/P1082>  ?var12 .     ?var15  <http://www.wikidata.org/prop/qualifier/P585>  ?var14 .   }  } } GROUP BY  ?var16  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (  AVG ( ?var22  ) AS  ?var23  ) WHERE {  {   SELECT(  STR (  YEAR (  ?var24  )  )  AS  ?var21  ) ?var22    WHERE   {     <http://www.wikidata.org/entity/Q30>  <http://www.wikidata.org/prop/P1082>  ?var25 .     ?var25  <http://www.wikidata.org/prop/statement/P1082>  ?var22 .     ?var25  <http://www.wikidata.org/prop/qualifier/P585>  ?var24 .   }  } } GROUP BY  ?var26  ?var21   }
+}

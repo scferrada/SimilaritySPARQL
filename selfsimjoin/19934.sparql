@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 ?var14 ?var15 ?var16 ?var17 ?var18 WHERE  { ?var11 <http://www.w3.org/2000/01/rdf-schema#label> ?var19 ;      <http://www.wikidata.org/prop/direct/P2101> ?var12   FILTER ( lcase(?var19) = "nickel"@en )  }  }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 ?var24 ?var25 ?var26 ?var27 ?var28 WHERE  { ?var21 <http://www.w3.org/2000/01/rdf-schema#label> ?var29 ;      <http://www.wikidata.org/prop/direct/P2101> ?var22   FILTER ( lcase(?var29) = "nickel"@en )  }  }
+}

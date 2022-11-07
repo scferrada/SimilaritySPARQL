@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 (COUNT(?var13) AS ?var14) WHERE  { { BIND(concat(?var15, " eyes") AS ?var11)    ?var13 <http://www.wikidata.org/prop/direct/P1340> ?var16 ;       <http://www.wikidata.org/prop/direct/P1884> ?var12 .    ?var16 <http://www.w3.org/2000/01/rdf-schema#label> ?var15   }   FILTER ( lang(?var15) = "en" )  } GROUP BY ?var11 ?var12  }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 (COUNT(?var23) AS ?var24) WHERE  { { BIND(concat(?var25, " eyes") AS ?var21)    ?var23 <http://www.wikidata.org/prop/direct/P1340> ?var26 ;       <http://www.wikidata.org/prop/direct/P1884> ?var22 .    ?var26 <http://www.w3.org/2000/01/rdf-schema#label> ?var25   }   FILTER ( lang(?var25) = "en" )  } GROUP BY ?var21 ?var22  }
+}

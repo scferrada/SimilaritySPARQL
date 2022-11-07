@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {   ?var11  <http://schema.org/about>  ?var14 .   ?var11  <http://schema.org/inLanguage>  "fr".   ?var14  <http://wikiba.se/ontology#sitelinks>  ?var15 .  FILTER (  ( (  ?var15  = "1"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) .   ?var14  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q571> .   ?var14  ?var16  ?var17 .   ?var12  ?var16  ?var14 . } GROUP BY  ?var11  LIMIT 10  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {   ?var21  <http://schema.org/about>  ?var24 .   ?var21  <http://schema.org/inLanguage>  "fr".   ?var24  <http://wikiba.se/ontology#sitelinks>  ?var25 .  FILTER (  ( (  ?var25  = "1"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) .   ?var24  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q571> .   ?var24  ?var26  ?var27 .   ?var22  ?var26  ?var24 . } GROUP BY  ?var21  LIMIT 10  }
+}

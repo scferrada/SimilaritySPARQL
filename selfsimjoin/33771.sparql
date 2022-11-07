@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT (COUNT(?var11) AS ?var12) ?var13 WHERE  { { BIND(iri(concat("string1", ?var14)) AS ?var15)    ?var13 <http://www.wikidata.org/prop/direct/P3217> ?var14 .    ?var11 <http://www.wikidata.org/prop/direct/P170> ?var13   }   ?var11 <http://www.wikidata.org/prop/direct/P18> ?var16  } GROUP BY ?var13  }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT (COUNT(?var21) AS ?var22) ?var23 WHERE  { { BIND(iri(concat("string1", ?var24)) AS ?var25)    ?var23 <http://www.wikidata.org/prop/direct/P3217> ?var24 .    ?var21 <http://www.wikidata.org/prop/direct/P170> ?var23   }   ?var21 <http://www.wikidata.org/prop/direct/P18> ?var26  } GROUP BY ?var23  }
+}

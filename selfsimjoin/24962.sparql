@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) ?var14  WHERE {   BIND (  STR (  YEAR (  ?var15  )  )  AS  ?var11 ).   ?var12  <http://www.wikidata.org/prop/direct/P21>  ?var14 ;  <http://www.wikidata.org/prop/direct/P27>  <http://www.wikidata.org/entity/Q20> ;  <http://www.wikidata.org/prop/direct/P569>  ?var15 .   VALUES (  ?var14  ) {    (  <http://www.wikidata.org/entity/Q6581097>  )   }  FILTER (  ( (  <http://www.w3.org/2001/XMLSchema#integer>  ( ?var11 )  >= "1930"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) . } GROUP BY  ?var11  ?var14   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) ?var24  WHERE {   BIND (  STR (  YEAR (  ?var25  )  )  AS  ?var21 ).   ?var22  <http://www.wikidata.org/prop/direct/P21>  ?var24 ;  <http://www.wikidata.org/prop/direct/P27>  <http://www.wikidata.org/entity/Q20> ;  <http://www.wikidata.org/prop/direct/P569>  ?var25 .   VALUES (  ?var24  ) {    (  <http://www.wikidata.org/entity/Q6581097>  )   }  FILTER (  ( (  <http://www.w3.org/2001/XMLSchema#integer>  ( ?var21 )  >= "1930"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) . } GROUP BY  ?var21  ?var24   }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 ?var14 ?var15 ?var16 ?var17 WHERE  { ?var11 <http://www.w3.org/2000/01/rdf-schema#label> "Apple"@en ;      <http://www.wikidata.org/prop/direct/P31> ?var12 .   ?var12 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q783794> .   ?var11 <http://www.wikidata.org/prop/direct/P17> ?var14 ;      <http://www.wikidata.org/prop/direct/P159> ?var13 ;      <http://www.wikidata.org/prop/direct/P2139> ?var15 ;      <http://www.wikidata.org/prop/direct/P856> ?var16 ;      <http://www.wikidata.org/prop/direct/P1128> ?var17  } LIMIT  1  }
+SIMILARITY JOIN ON ( ?var15 ) ( ?var25 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 ?var24 ?var25 ?var26 ?var27 WHERE  { ?var21 <http://www.w3.org/2000/01/rdf-schema#label> "Apple"@en ;      <http://www.wikidata.org/prop/direct/P31> ?var22 .   ?var22 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q783794> .   ?var21 <http://www.wikidata.org/prop/direct/P17> ?var24 ;      <http://www.wikidata.org/prop/direct/P159> ?var23 ;      <http://www.wikidata.org/prop/direct/P2139> ?var25 ;      <http://www.wikidata.org/prop/direct/P856> ?var26 ;      <http://www.wikidata.org/prop/direct/P1128> ?var27  } LIMIT  1  }
+}

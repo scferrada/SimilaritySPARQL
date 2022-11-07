@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT( COUNT ( ?var11  ) AS  ?var12  ) ?var13  WHERE {   ?var11  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  ?var13 . } GROUP BY  ?var13   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT( COUNT ( ?var21  ) AS  ?var22  ) ?var23  WHERE {   ?var21  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  ?var23 . } GROUP BY  ?var23   }
+}

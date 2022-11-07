@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {  {   SELECT DISTINCT ?var11    WHERE   {     ?var14  ?var11  ?var12 .  FILTER (    (  isBLANK (  ?var12  )  )  ) .   }   LIMIT 5  }  {   SELECT ?var11  ?var12    WHERE   {     ?var14  ?var11  ?var12 .  FILTER (    (  isBLANK (  ?var12  )  )  ) .   }   LIMIT 5  } } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {  {   SELECT DISTINCT ?var21    WHERE   {     ?var24  ?var21  ?var22 .  FILTER (    (  isBLANK (  ?var22  )  )  ) .   }   LIMIT 5  }  {   SELECT ?var21  ?var22    WHERE   {     ?var24  ?var21  ?var22 .  FILTER (    (  isBLANK (  ?var22  )  )  ) .   }   LIMIT 5  } } GROUP BY  ?var21   }
+}

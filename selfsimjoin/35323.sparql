@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {   ?var11  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://www.loc.gov/mads/rdf/v1#Language> .   ?var12  <http://purl.org/dc/elements/1.1/language>  ?var11 . } GROUP BY  ?var11  ?var14   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {   ?var21  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://www.loc.gov/mads/rdf/v1#Language> .   ?var22  <http://purl.org/dc/elements/1.1/language>  ?var21 . } GROUP BY  ?var21  ?var24   }
+}

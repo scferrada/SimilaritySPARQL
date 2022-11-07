@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT ?var11 (COUNT(?var12) AS ?var13) WHERE  { { ?var11 ?var14         ?var15 .    ?var15 <http://www.wikidata.org/prop/qualifier/P1013> ?var12    VALUES ?var16 { <http://www.wikidata.org/entity/Q4167836> <http://www.wikidata.org/entity/Q5> }   }   ?var12 <http://www.wikidata.org/prop/direct/P31> ?var16  } GROUP BY ?var11 HAVING ( ?var13 > 2 ) LIMIT  400  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT ?var21 (COUNT(?var22) AS ?var23) WHERE  { { ?var21 ?var24         ?var25 .    ?var25 <http://www.wikidata.org/prop/qualifier/P1013> ?var22    VALUES ?var26 { <http://www.wikidata.org/entity/Q4167836> <http://www.wikidata.org/entity/Q5> }   }   ?var22 <http://www.wikidata.org/prop/direct/P31> ?var26  } GROUP BY ?var21 HAVING ( ?var23 > 2 ) LIMIT  400  }
+}

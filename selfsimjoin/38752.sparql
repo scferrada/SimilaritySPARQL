@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 (COUNT(?var13) AS ?var14) WHERE  { { BIND(year(?var15) AS ?var12)    ?var13 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> ;       <http://www.wikidata.org/prop/direct/P21> ?var11 ;       <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142> .    ?var13 <http://www.wikidata.org/prop/P569>/<http://www.wikidata.org/prop/statement/value/P569> ?var16 .    ?var16 <http://wikiba.se/ontology#timeValue> ?var15 .    ?var17 a           <http://schema.org/Article> ;       <http://schema.org/about> ?var13 ;       <http://schema.org/isPartOf> <https://es.wikipedia.org/>   }   FILTER ( ( ?var12 >= 1900 ) && ( ?var12 < 1910 ) )  } GROUP BY ?var11 ?var12  }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 (COUNT(?var23) AS ?var24) WHERE  { { BIND(year(?var25) AS ?var22)    ?var23 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> ;       <http://www.wikidata.org/prop/direct/P21> ?var21 ;       <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142> .    ?var23 <http://www.wikidata.org/prop/P569>/<http://www.wikidata.org/prop/statement/value/P569> ?var26 .    ?var26 <http://wikiba.se/ontology#timeValue> ?var25 .    ?var27 a           <http://schema.org/Article> ;       <http://schema.org/about> ?var23 ;       <http://schema.org/isPartOf> <https://es.wikipedia.org/>   }   FILTER ( ( ?var22 >= 1900 ) && ( ?var22 < 1910 ) )  } GROUP BY ?var21 ?var22  }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (COUNT(?var12) AS ?var13) WHERE  { ?var12 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> ;      <http://www.wikidata.org/prop/direct/P22> ?var14 ;      <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q16> .   ?var14 <http://www.wikidata.org/prop/direct/P106> ?var11 .   ?var12 <http://www.wikidata.org/prop/P569>/<http://www.wikidata.org/prop/statement/value/P569> ?var15 .   ?var15 <http://wikiba.se/ontology#timeValue> ?var16   FILTER ( year(?var16) > 1900 )  } GROUP BY ?var11  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (COUNT(?var22) AS ?var23) WHERE  { ?var22 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> ;      <http://www.wikidata.org/prop/direct/P22> ?var24 ;      <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q16> .   ?var24 <http://www.wikidata.org/prop/direct/P106> ?var21 .   ?var22 <http://www.wikidata.org/prop/P569>/<http://www.wikidata.org/prop/statement/value/P569> ?var25 .   ?var25 <http://wikiba.se/ontology#timeValue> ?var26   FILTER ( year(?var26) > 1900 )  } GROUP BY ?var21  }
+}

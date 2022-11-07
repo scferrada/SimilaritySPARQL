@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT( COUNT ( ?var11  ) AS  ?var12  ) ?var13  WHERE {   BIND (  ( "3600"^^<http://www.w3.org/2001/XMLSchema#integer> * <http://www.w3.org/2001/XMLSchema#float>  ( ?var14 )  )  AS  ?var13 ).   ?var11  <http://www.wikidata.org/prop/direct/P776>  ?var15 .   ?var11  <http://www.wikidata.org/prop/P625>  ?var16 .   ?var16  <http://www.wikidata.org/prop/statement/value/P625>  ?var17 .   ?var17  <http://wikiba.se/ontology#geoPrecision>  ?var14 . } GROUP BY  ?var13   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT( COUNT ( ?var21  ) AS  ?var22  ) ?var23  WHERE {   BIND (  ( "3600"^^<http://www.w3.org/2001/XMLSchema#integer> * <http://www.w3.org/2001/XMLSchema#float>  ( ?var24 )  )  AS  ?var23 ).   ?var21  <http://www.wikidata.org/prop/direct/P776>  ?var25 .   ?var21  <http://www.wikidata.org/prop/P625>  ?var26 .   ?var26  <http://www.wikidata.org/prop/statement/value/P625>  ?var27 .   ?var27  <http://wikiba.se/ontology#geoPrecision>  ?var24 . } GROUP BY  ?var23   }
+}

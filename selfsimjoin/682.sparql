@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT (* ) AS  ?var12  ) WHERE {   VALUES (  ?var11  ) {    (  <http://www.wikidata.org/entity/Q18975796>  )    (  <http://www.wikidata.org/entity/Q123>  )    (  <http://www.wikidata.org/entity/Q18975796>  )   }   ?var11  ?var13  ?var14 .   ?var14  <http://wikiba.se/ontology#rank>  ?var15 .   ?var14  ?var16  ?var17 .  FILTER (  (  REGEX (  STR (  ?var16  ) , "string1" )  )  ) . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT (* ) AS  ?var22  ) WHERE {   VALUES (  ?var21  ) {    (  <http://www.wikidata.org/entity/Q18975796>  )    (  <http://www.wikidata.org/entity/Q123>  )    (  <http://www.wikidata.org/entity/Q18975796>  )   }   ?var21  ?var23  ?var24 .   ?var24  <http://wikiba.se/ontology#rank>  ?var25 .   ?var24  ?var26  ?var27 .  FILTER (  (  REGEX (  STR (  ?var26  ) , "string1" )  )  ) . } GROUP BY  ?var21   }
+}

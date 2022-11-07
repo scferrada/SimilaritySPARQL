@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT * WHERE {  {   SELECT ?var11 ( COUNT (* ) AS  ?var12  )   WHERE   {     ?var13  <http://wikiba.se/ontology#quantityAmount>  ?var14 .  FILTER (    ( (  ?var14  > "1000000"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) .     []  ?var11  ?var13 .   }   GROUP BY  ?var11   }   []  <http://wikiba.se/ontology#statementValue>  ?var11 . }  }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT * WHERE {  {   SELECT ?var21 ( COUNT (* ) AS  ?var22  )   WHERE   {     ?var23  <http://wikiba.se/ontology#quantityAmount>  ?var24 .  FILTER (    ( (  ?var24  > "1000000"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) .     []  ?var21  ?var23 .   }   GROUP BY  ?var21   }   []  <http://wikiba.se/ontology#statementValue>  ?var21 . }  }
+}

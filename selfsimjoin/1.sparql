@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT (count(*) AS ?var11) ?var12 ?var13 WHERE  { SELECT (?var12 AS ?var14) ?var15 ?var16 ?var12 ?var13 ?var17 ?var18   WHERE    { { { { BIND(strafter(str(?var16), "/entity/") AS ?var15)        BIND(strafter(str(?var19), "/direct/") AS ?var12)       }       BIND(strafter(str(?var18), "/entity/") AS ?var17)      }      ?var16 ?var19         ?var18 .      ?var13 <http://wikiba.se/ontology#directClaim> ?var19     }     FILTER ( ?var19 = <http://www.wikidata.org/prop/direct/P36> )    }  } GROUP BY ?var12 ?var13  }
+SIMILARITY JOIN ON ( ?var11 ) ( ?var21 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT (count(*) AS ?var21) ?var22 ?var23 WHERE  { SELECT (?var22 AS ?var24) ?var25 ?var26 ?var22 ?var23 ?var27 ?var28   WHERE    { { { { BIND(strafter(str(?var26), "/entity/") AS ?var25)        BIND(strafter(str(?var29), "/direct/") AS ?var22)       }       BIND(strafter(str(?var28), "/entity/") AS ?var27)      }      ?var26 ?var29         ?var28 .      ?var23 <http://wikiba.se/ontology#directClaim> ?var29     }     FILTER ( ?var29 = <http://www.wikidata.org/prop/direct/P36> )    }  } GROUP BY ?var22 ?var23  }
+}

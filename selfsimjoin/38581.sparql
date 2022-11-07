@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {   ?var11  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q16970> .   ?var11  <http://www.wikidata.org/prop/direct/P17>  <http://www.wikidata.org/entity/Q142> .   ?var11  <http://www.wikidata.org/prop/P625>  ?var14 .   ?var14  <http://www.wikidata.org/prop/statement/value/P625>  ?var15 .   ?var15  <http://wikiba.se/ontology#geoPrecision>  ?var16 .   ?var15  <http://wikiba.se/ontology#geoPrecision>  ?var17 .  FILTER (  ( (  ?var16  <  ?var17  ) )  ) . } GROUP BY  ?var11   HAVING  ( (  ?var13  > "1"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )    }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {   ?var21  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q16970> .   ?var21  <http://www.wikidata.org/prop/direct/P17>  <http://www.wikidata.org/entity/Q142> .   ?var21  <http://www.wikidata.org/prop/P625>  ?var24 .   ?var24  <http://www.wikidata.org/prop/statement/value/P625>  ?var25 .   ?var25  <http://wikiba.se/ontology#geoPrecision>  ?var26 .   ?var25  <http://wikiba.se/ontology#geoPrecision>  ?var27 .  FILTER (  ( (  ?var26  <  ?var27  ) )  ) . } GROUP BY  ?var21   HAVING  ( (  ?var23  > "1"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )    }
+}

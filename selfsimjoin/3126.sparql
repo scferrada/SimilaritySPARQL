@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11Label ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {   BIND (  YEAR (  ?var14  )  AS  ?var15 ).   ?var12  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q215380> .   ?var12  <http://www.wikidata.org/prop/direct/P571>  ?var14 .   ?var12  <http://www.wikidata.org/prop/direct/P136>  ?var11 .   ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var11Label .  FILTER (  ( (  LANG (  ?var11Label  )  =  "en" ) )  ) .  FILTER (  ( (  ?var15  > "1900"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) . } GROUP BY  ?var11Label   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21Label ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {   BIND (  YEAR (  ?var24  )  AS  ?var25 ).   ?var22  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q215380> .   ?var22  <http://www.wikidata.org/prop/direct/P571>  ?var24 .   ?var22  <http://www.wikidata.org/prop/direct/P136>  ?var21 .   ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var21Label .  FILTER (  ( (  LANG (  ?var21Label  )  =  "en" ) )  ) .  FILTER (  ( (  ?var25  > "1900"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) . } GROUP BY  ?var21Label   }
+}

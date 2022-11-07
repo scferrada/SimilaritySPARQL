@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12 ( COUNT (* ) AS  ?var13  ) WHERE {   VALUES (  ?var11  ) {    (  <http://www.wikidata.org/prop/direct/P2013>  )   }   ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var12 .   ?var14  ?var11  ?var15 . } GROUP BY  ?var11  ?var12   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22 ( COUNT (* ) AS  ?var23  ) WHERE {   VALUES (  ?var21  ) {    (  <http://www.wikidata.org/prop/direct/P2013>  )   }   ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var22 .   ?var24  ?var21  ?var25 . } GROUP BY  ?var21  ?var22   }
+}

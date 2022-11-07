@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 (COUNT(DISTINCT ?var14) AS ?var15) WHERE  { { BIND(year(?var16) AS ?var12)    ?var14 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q215380> ;       <http://www.wikidata.org/prop/direct/P571> ?var16 ;       <http://www.wikidata.org/prop/direct/P136> ?var11 ;       <http://www.wikidata.org/prop/direct/P740> ?var17 .    ?var17 <http://www.wikidata.org/prop/direct/P17> ?var13   }   FILTER ( ?var16 > "1900-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> )  } GROUP BY ?var11 ?var12 ?var13  }
+SIMILARITY JOIN ON ( ?var15 ) ( ?var25 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 (COUNT(DISTINCT ?var24) AS ?var25) WHERE  { { BIND(year(?var26) AS ?var22)    ?var24 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q215380> ;       <http://www.wikidata.org/prop/direct/P571> ?var26 ;       <http://www.wikidata.org/prop/direct/P136> ?var21 ;       <http://www.wikidata.org/prop/direct/P740> ?var27 .    ?var27 <http://www.wikidata.org/prop/direct/P17> ?var23   }   FILTER ( ?var26 > "1900-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> )  } GROUP BY ?var21 ?var22 ?var23  }
+}

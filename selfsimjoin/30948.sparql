@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11Label (COUNT(?var12) AS ?var13) WHERE  { BIND("Count" AS ?var11Label)   ?var14 <http://www.wikidata.org/prop/direct/P2181> ?var12  } GROUP BY ?var11Label  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21Label (COUNT(?var22) AS ?var23) WHERE  { BIND("Count" AS ?var21Label)   ?var24 <http://www.wikidata.org/prop/direct/P2181> ?var22  } GROUP BY ?var21Label  }
+}

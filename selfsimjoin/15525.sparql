@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12  ?var13  ?var14  WHERE {   ?var11  <http://www.wikidata.org/prop/direct/P106>  <http://www.wikidata.org/entity/Q2526255> .   ?var11  <http://www.wikidata.org/prop/direct/P569>  ?var13 .  {   SELECT ?var11 ( COUNT ( ?var15  ) AS  ?var14  )   WHERE   {     ?var11  <http://www.wikidata.org/prop/direct/P569>  ?var13 .   }   GROUP BY  ?var11   }  FILTER (  ( (  ?var14  < "2"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) .   ?var11  <http://www.w3.org/2000/01/rdf-schema#label>  ?var12 .  FILTER (  ( (  LANG (  ?var16  )  =  "en" ) )  ) .  FILTER (  ( (  LANG (  ?var12  )  =  "en" ) )  ) . }  }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22  ?var23  ?var24  WHERE {   ?var21  <http://www.wikidata.org/prop/direct/P106>  <http://www.wikidata.org/entity/Q2526255> .   ?var21  <http://www.wikidata.org/prop/direct/P569>  ?var23 .  {   SELECT ?var21 ( COUNT ( ?var25  ) AS  ?var24  )   WHERE   {     ?var21  <http://www.wikidata.org/prop/direct/P569>  ?var23 .   }   GROUP BY  ?var21   }  FILTER (  ( (  ?var24  < "2"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) .   ?var21  <http://www.w3.org/2000/01/rdf-schema#label>  ?var22 .  FILTER (  ( (  LANG (  ?var26  )  =  "en" ) )  ) .  FILTER (  ( (  LANG (  ?var22  )  =  "en" ) )  ) . }  }
+}

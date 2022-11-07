@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 WHERE  { SELECT ?var11 ?var12 (AVG(?var13) AS ?var13)   WHERE    { SELECT ?var11 (str(year(?var14)) AS ?var12)     WHERE      { ?var11 <http://www.wikidata.org/prop/direct/P47> <http://www.wikidata.org/entity/Q1009> ;          <http://www.wikidata.org/prop/P1082> ?var15 .       ?var15 <http://www.wikidata.org/prop/statement/P1082> ?var13 ;          <http://www.wikidata.org/prop/qualifier/P585> ?var14      }    }   GROUP BY ?var11 ?var12  }  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 WHERE  { SELECT ?var21 ?var22 (AVG(?var23) AS ?var23)   WHERE    { SELECT ?var21 (str(year(?var24)) AS ?var22)     WHERE      { ?var21 <http://www.wikidata.org/prop/direct/P47> <http://www.wikidata.org/entity/Q1009> ;          <http://www.wikidata.org/prop/P1082> ?var25 .       ?var25 <http://www.wikidata.org/prop/statement/P1082> ?var23 ;          <http://www.wikidata.org/prop/qualifier/P585> ?var24      }    }   GROUP BY ?var21 ?var22  }  }
+}

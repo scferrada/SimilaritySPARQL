@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT ( ?var12  ) AS  ?var13  ) WHERE {  SELECT ?var11 (  CONCAT (  ?var14 , "'", ?var15  )  AS  ?var12  )  WHERE  {    VALUES (  ?var11  ?var14  ?var15  ) {     (  "James" "Belgium" "70" )     (  "Mary" "worldwide" "71" )     (  "Mary" "worldwide" "72" )     (  "Mary" "worldwide" "73" )     (  "Mary" "France" "76" )    }  } } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT ( ?var22  ) AS  ?var23  ) WHERE {  SELECT ?var21 (  CONCAT (  ?var24 , "'", ?var25  )  AS  ?var22  )  WHERE  {    VALUES (  ?var21  ?var24  ?var25  ) {     (  "James" "Belgium" "70" )     (  "Mary" "worldwide" "71" )     (  "Mary" "worldwide" "72" )     (  "Mary" "worldwide" "73" )     (  "Mary" "France" "76" )    }  } } GROUP BY  ?var21   }
+}

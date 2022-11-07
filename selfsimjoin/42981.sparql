@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12 ( COUNT ( ?var13  ) AS  ?var14  ) WHERE {   ?var13  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q3305213> .   ?var13  <http://www.wikidata.org/prop/direct/P170>  <http://www.wikidata.org/entity/Q5582> .   ?var13  <http://www.wikidata.org/prop/direct/P1071>  ?var12 .   ?var12  <http://www.wikidata.org/prop/direct/P625>  ?var11 . } GROUP BY  ?var12  ?var11   }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22 ( COUNT ( ?var23  ) AS  ?var24  ) WHERE {   ?var23  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q3305213> .   ?var23  <http://www.wikidata.org/prop/direct/P170>  <http://www.wikidata.org/entity/Q5582> .   ?var23  <http://www.wikidata.org/prop/direct/P1071>  ?var22 .   ?var22  <http://www.wikidata.org/prop/direct/P625>  ?var21 . } GROUP BY  ?var22  ?var21   }
+}

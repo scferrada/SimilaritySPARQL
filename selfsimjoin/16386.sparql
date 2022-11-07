@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 (count(*) AS ?var13) WHERE  { { { VALUES ?var11 { <http://www.wikidata.org/entity/Q3295867> }     BIND(coalesce(?var14, ?var14) AS ?var12)    }    ?var11 <http://www.wikidata.org/prop/direct/P1546>|<http://www.wikidata.org/prop/direct/P1451> ?var14 .    ?var14 <http://www.w3.org/2000/01/rdf-schema#label> ?var14   }   FILTER ( lang(?var14) = "fr" )  } GROUP BY ?var11 ?var12  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 (count(*) AS ?var23) WHERE  { { { VALUES ?var21 { <http://www.wikidata.org/entity/Q3295867> }     BIND(coalesce(?var24, ?var24) AS ?var22)    }    ?var21 <http://www.wikidata.org/prop/direct/P1546>|<http://www.wikidata.org/prop/direct/P1451> ?var24 .    ?var24 <http://www.w3.org/2000/01/rdf-schema#label> ?var24   }   FILTER ( lang(?var24) = "fr" )  } GROUP BY ?var21 ?var22  }
+}

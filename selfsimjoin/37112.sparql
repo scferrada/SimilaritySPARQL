@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (  AVG ( ?var12  ) AS  ?var13  ) WHERE {   ?var11  <http://example.org/knows>  ?var14 .   ?var14  <http://example.org/age>  ?var12 . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (  AVG ( ?var22  ) AS  ?var23  ) WHERE {   ?var21  <http://example.org/knows>  ?var24 .   ?var24  <http://example.org/age>  ?var22 . } GROUP BY  ?var21   }
+}

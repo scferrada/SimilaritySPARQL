@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 ?var14 WHERE  { { { SELECT ?var11 (COUNT(?var15) AS ?var13) ?var14     WHERE      { { SELECT (MIN(?var16) AS ?var11) ?var14        WHERE         { ?var16 <http://www.wikidata.org/prop/direct/P1438> ?var14 }        GROUP BY ?var14       }       ?var15 <http://www.wikidata.org/prop/direct/P1438> ?var14      }     GROUP BY ?var11 ?var14    }    ?var11 <http://www.wikidata.org/prop/direct/P1438> ?var14 .    ?var12 <http://www.wikidata.org/prop/direct/P1438> ?var14   }   FILTER ( ?var11 != ?var12 )  }  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 ?var24 WHERE  { { { SELECT ?var21 (COUNT(?var25) AS ?var23) ?var24     WHERE      { { SELECT (MIN(?var26) AS ?var21) ?var24        WHERE         { ?var26 <http://www.wikidata.org/prop/direct/P1438> ?var24 }        GROUP BY ?var24       }       ?var25 <http://www.wikidata.org/prop/direct/P1438> ?var24      }     GROUP BY ?var21 ?var24    }    ?var21 <http://www.wikidata.org/prop/direct/P1438> ?var24 .    ?var22 <http://www.wikidata.org/prop/direct/P1438> ?var24   }   FILTER ( ?var21 != ?var22 )  }  }
+}

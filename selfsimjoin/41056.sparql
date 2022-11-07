@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (  AVG ( ?var12  ) AS  ?var13  ) WHERE {   BIND (  (  YEAR (  ?var14  ) - YEAR (  ?var15  )  )  AS  ?var12 ).   BIND (  ROUND (  (  YEAR (  ?var14  ) /"10"^^<http://www.w3.org/2001/XMLSchema#integer>  )  )  AS  ?var11 ).   ?var16  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q5> ;  <http://www.wikidata.org/prop/direct/P569>  ?var15 ;  <http://www.wikidata.org/prop/direct/P570>  ?var14 .   ?var17  <http://schema.org/about>  ?var16 .   ?var17  <http://schema.org/isPartOf>  <https://fr.wikisource.org/> .  FILTER (  ( (  ?var11  > "109"^^<http://www.w3.org/2001/XMLSchema#integer>  ) && (  ?var11  < "111"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (  AVG ( ?var22  ) AS  ?var23  ) WHERE {   BIND (  (  YEAR (  ?var24  ) - YEAR (  ?var25  )  )  AS  ?var22 ).   BIND (  ROUND (  (  YEAR (  ?var24  ) /"10"^^<http://www.w3.org/2001/XMLSchema#integer>  )  )  AS  ?var21 ).   ?var26  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q5> ;  <http://www.wikidata.org/prop/direct/P569>  ?var25 ;  <http://www.wikidata.org/prop/direct/P570>  ?var24 .   ?var27  <http://schema.org/about>  ?var26 .   ?var27  <http://schema.org/isPartOf>  <https://fr.wikisource.org/> .  FILTER (  ( (  ?var21  > "109"^^<http://www.w3.org/2001/XMLSchema#integer>  ) && (  ?var21  < "111"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )  ) . } GROUP BY  ?var21   }
+}

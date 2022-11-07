@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12  ?var13  ?var14  ?var15  ?var16  ?var17  WHERE {   ?var17  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q7187> ;  <http://www.wikidata.org/prop/direct/P594>  ?var16 .   ?var15  <http://www.wikidata.org/prop/direct/P3433>  ?var17 ;  <http://www.wikidata.org/prop/direct/P31>  ?var14 ;  <http://www.wikidata.org/prop/direct/P644>  ?var13 ;  <http://www.wikidata.org/prop/direct/P645>  ?var12 ;  <http://www.wikidata.org/prop/direct/P3354>  ?var11 .   ?var14  <http://www.wikidata.org/prop/direct/P2888>  <http://purl.obolibrary.org/obo/SO_0001583> . }  }
+SIMILARITY JOIN ON ( ?var12, ?var13 ) ( ?var22, ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22  ?var23  ?var24  ?var25  ?var26  ?var27  WHERE {   ?var27  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q7187> ;  <http://www.wikidata.org/prop/direct/P594>  ?var26 .   ?var25  <http://www.wikidata.org/prop/direct/P3433>  ?var27 ;  <http://www.wikidata.org/prop/direct/P31>  ?var24 ;  <http://www.wikidata.org/prop/direct/P644>  ?var23 ;  <http://www.wikidata.org/prop/direct/P645>  ?var22 ;  <http://www.wikidata.org/prop/direct/P3354>  ?var21 .   ?var24  <http://www.wikidata.org/prop/direct/P2888>  <http://purl.obolibrary.org/obo/SO_0001583> . }  }
+}

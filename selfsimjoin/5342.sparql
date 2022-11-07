@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 (COUNT(DISTINCT ?var13) AS ?var14) WHERE  { ?var13 <http://www.wikidata.org/prop/direct/P1080> ?var11 .   ?var11 <http://schema.org/description> ?var12   FILTER ( lang(?var12) = "en" )  } GROUP BY ?var11 ?var12  }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 (COUNT(DISTINCT ?var23) AS ?var24) WHERE  { ?var23 <http://www.wikidata.org/prop/direct/P1080> ?var21 .   ?var21 <http://schema.org/description> ?var22   FILTER ( lang(?var22) = "en" )  } GROUP BY ?var21 ?var22  }
+}

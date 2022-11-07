@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12  ?var13 ( COUNT ( ?var11  ) AS  ?var14  ) ?var15  ?var16  ?var17  WHERE {   ?var11  <http://www.wikidata.org/prop/direct/P509>  [  <http://www.w3.org/2000/01/rdf-schema#label>  "string1"@en  ] ;  <http://www.wikidata.org/prop/direct/P569>  ?var16 ;  <http://www.wikidata.org/prop/direct/570>  ?var17 ;  <http://www.w3.org/2000/01/rdf-schema#label>  ?var15 ;  <http://www.wikidata.org/prop/direct/P20>  ?var13 .   ?var13  <http://www.wikidata.org/prop/direct/P625>  ?var12 .   ?var18  <http://www.w3.org/2000/01/rdf-schema#label>  ?var15 .  FILTER (  ( (  LANG (  ?var15  )  =  "en" ) )  ) . } GROUP BY  ?var11  ?var13  ?var12  ?var15  ?var16  ?var17   }
+SIMILARITY JOIN ON ( ?var14 ) ( ?var24 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22  ?var23 ( COUNT ( ?var21  ) AS  ?var24  ) ?var25  ?var26  ?var27  WHERE {   ?var21  <http://www.wikidata.org/prop/direct/P509>  [  <http://www.w3.org/2000/01/rdf-schema#label>  "string1"@en  ] ;  <http://www.wikidata.org/prop/direct/P569>  ?var26 ;  <http://www.wikidata.org/prop/direct/570>  ?var27 ;  <http://www.w3.org/2000/01/rdf-schema#label>  ?var25 ;  <http://www.wikidata.org/prop/direct/P20>  ?var23 .   ?var23  <http://www.wikidata.org/prop/direct/P625>  ?var22 .   ?var28  <http://www.w3.org/2000/01/rdf-schema#label>  ?var25 .  FILTER (  ( (  LANG (  ?var25  )  =  "en" ) )  ) . } GROUP BY  ?var21  ?var23  ?var22  ?var25  ?var26  ?var27   }
+}

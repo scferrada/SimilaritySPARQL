@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12  WHERE {  SELECT( COUNT ( ?var13  ) AS  ?var11  )  WHERE  {    ?var13  <http://www.wikidata.org/prop/direct/P21>  <http://www.wikidata.org/entity/Q6581097> ;  <http://www.wikidata.org/prop/direct/P27>  <http://www.wikidata.org/entity/Q20> ;  <http://www.wikidata.org/prop/direct/P569>  ?var14 .  FILTER (   ( (  ?var14  >=  "2000-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>  ) && (  ?var14  <=  "2000-12-31T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>  ) )  ) .  } }  }
+SIMILARITY JOIN ON ( ?var11 ) ( ?var21 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22  WHERE {  SELECT( COUNT ( ?var23  ) AS  ?var21  )  WHERE  {    ?var23  <http://www.wikidata.org/prop/direct/P21>  <http://www.wikidata.org/entity/Q6581097> ;  <http://www.wikidata.org/prop/direct/P27>  <http://www.wikidata.org/entity/Q20> ;  <http://www.wikidata.org/prop/direct/P569>  ?var24 .  FILTER (   ( (  ?var24  >=  "2000-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>  ) && (  ?var24  <=  "2000-12-31T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>  ) )  ) .  } }  }
+}

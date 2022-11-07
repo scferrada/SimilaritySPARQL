@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT (* ) AS  ?var12  ) WHERE {   VALUES (  ?var11  ) {    (  <http://www.wikidata.org/entity/Q5>  )   }   ?var13  <http://www.wikidata.org/prop/direct/P31>  ?var11 . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT (* ) AS  ?var22  ) WHERE {   VALUES (  ?var21  ) {    (  <http://www.wikidata.org/entity/Q5>  )   }   ?var23  <http://www.wikidata.org/prop/direct/P31>  ?var21 . } GROUP BY  ?var21   }
+}

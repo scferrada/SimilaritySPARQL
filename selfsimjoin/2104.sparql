@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ( COUNT (* ) AS  ?var12  ) WHERE {   ?var13  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q3918> .   ?var13  <http://www.wikidata.org/prop/direct/P17>  <http://www.wikidata.org/entity/Q298> .   ?var14  <http://www.wikidata.org/prop/direct/P69>  ?var13 .   ?var15  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q11424> .   ?var15  <http://www.wikidata.org/prop/direct/P57>  ?var14 .   ?var13  <http://www.w3.org/2000/01/rdf-schema#label>  ?var11 .  FILTER (  ( (  LANG (  ?var11  )  =  "es" ) )  ) . } GROUP BY  ?var11   }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ( COUNT (* ) AS  ?var22  ) WHERE {   ?var23  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q3918> .   ?var23  <http://www.wikidata.org/prop/direct/P17>  <http://www.wikidata.org/entity/Q298> .   ?var24  <http://www.wikidata.org/prop/direct/P69>  ?var23 .   ?var25  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q11424> .   ?var25  <http://www.wikidata.org/prop/direct/P57>  ?var24 .   ?var23  <http://www.w3.org/2000/01/rdf-schema#label>  ?var21 .  FILTER (  ( (  LANG (  ?var21  )  =  "es" ) )  ) . } GROUP BY  ?var21   }
+}

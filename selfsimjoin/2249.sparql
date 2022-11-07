@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT DISTINCT ?var11 ?var12 ?var13 WHERE  { ?var11 <http://www.wikidata.org/prop/direct/P527> ?var14 ;      <http://www.wikidata.org/prop/direct/P2888> ?var15 ;      <http://www.wikidata.org/prop/direct/P2410> ?var16 .   ?var14 <http://www.wikidata.org/prop/direct/P1117> ?var13 ;      <http://www.wikidata.org/prop/direct/P2067> ?var12  }  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT DISTINCT ?var21 ?var22 ?var23 WHERE  { ?var21 <http://www.wikidata.org/prop/direct/P527> ?var24 ;      <http://www.wikidata.org/prop/direct/P2888> ?var25 ;      <http://www.wikidata.org/prop/direct/P2410> ?var26 .   ?var24 <http://www.wikidata.org/prop/direct/P1117> ?var23 ;      <http://www.wikidata.org/prop/direct/P2067> ?var22  }  }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11  ?var12  ?var13  WHERE {   ?var14  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q12136> .   ?var14  <http://www.wikidata.org/prop/direct/P3488>  ?var12 .   ?var14  <http://www.wikidata.org/prop/direct/P3487>  ?var13 .   ?var14  <http://www.w3.org/2000/01/rdf-schema#label>  ?var11 .  FILTER (  ( (  LANG (  ?var11  )  =  "en" ) )  ) . }  }
+SIMILARITY JOIN ON ( ?var12, ?var13 ) ( ?var22, ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21  ?var22  ?var23  WHERE {   ?var24  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q12136> .   ?var24  <http://www.wikidata.org/prop/direct/P3488>  ?var22 .   ?var24  <http://www.wikidata.org/prop/direct/P3487>  ?var23 .   ?var24  <http://www.w3.org/2000/01/rdf-schema#label>  ?var21 .  FILTER (  ( (  LANG (  ?var21  )  =  "en" ) )  ) . }  }
+}

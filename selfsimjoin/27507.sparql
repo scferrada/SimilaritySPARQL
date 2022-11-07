@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 ?var12 ?var13 ?var14 ?var15 ?var16 WHERE  { ?var11 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q26529> ;      <http://www.wikidata.org/prop/direct/P619> ?var16 ;      <http://www.wikidata.org/prop/direct/P1427> ?var12 ;      <http://www.wikidata.org/prop/direct/P375> ?var17 .   ?var17 <http://www.wikidata.org/prop/direct/P516> ?var18 .   ?var18 <http://www.wikidata.org/prop/direct/P495> ?var13 .   ?var13 <http://www.wikidata.org/prop/direct/P625> ?var15  }  }
+SIMILARITY JOIN ON ( ?var16 ) ( ?var26 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 ?var22 ?var23 ?var24 ?var25 ?var26 WHERE  { ?var21 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q26529> ;      <http://www.wikidata.org/prop/direct/P619> ?var26 ;      <http://www.wikidata.org/prop/direct/P1427> ?var22 ;      <http://www.wikidata.org/prop/direct/P375> ?var27 .   ?var27 <http://www.wikidata.org/prop/direct/P516> ?var28 .   ?var28 <http://www.wikidata.org/prop/direct/P495> ?var23 .   ?var23 <http://www.wikidata.org/prop/direct/P625> ?var25  }  }
+}

@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11 (COUNT(?var12) AS ?var13) ?var14 WHERE  { { BIND(str(year(?var15)) AS ?var11)    ?var12 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> ;       <http://www.wikidata.org/prop/direct/P577> ?var15 ;       <http://www.wikidata.org/prop/direct/P136> ?var14   }   FILTER ( ?var15 >= ( now() - "P100Y"^^<http://www.w3.org/2001/XMLSchema#duration> ) )   FILTER ( ?var14 != <http://www.wikidata.org/entity/Q8261> )  } GROUP BY ?var14 ?var11 HAVING ( ?var13 > 10 )  }
+SIMILARITY JOIN ON ( ?var13 ) ( ?var23 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21 (COUNT(?var22) AS ?var23) ?var24 WHERE  { { BIND(str(year(?var25)) AS ?var21)    ?var22 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> ;       <http://www.wikidata.org/prop/direct/P577> ?var25 ;       <http://www.wikidata.org/prop/direct/P136> ?var24   }   FILTER ( ?var25 >= ( now() - "P100Y"^^<http://www.w3.org/2001/XMLSchema#duration> ) )   FILTER ( ?var24 != <http://www.wikidata.org/entity/Q8261> )  } GROUP BY ?var24 ?var21 HAVING ( ?var23 > 10 )  }
+}

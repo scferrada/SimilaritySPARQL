@@ -1,0 +1,7 @@
+
+SELECT * WHERE {
+{ SELECT ?var11Label ( COUNT (* ) AS  ?var12  ) WHERE {   ?var13  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q19842659> .   ?var13  <http://www.w3.org/2000/01/rdf-schema#label>  ?var11Label .  FILTER (  ( (  LANG (  ?var11Label  )  =  "en" ) )  ) .   MINUS   {     ?var13  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q17362920> .   } } GROUP BY  ?var11Label   HAVING  ( ( COUNT (* ) > "1"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )    }
+SIMILARITY JOIN ON ( ?var12 ) ( ?var22 )
+TOP %d DISTANCE %s AS ?d 
+{ SELECT ?var21Label ( COUNT (* ) AS  ?var22  ) WHERE {   ?var23  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q19842659> .   ?var23  <http://www.w3.org/2000/01/rdf-schema#label>  ?var21Label .  FILTER (  ( (  LANG (  ?var21Label  )  =  "en" ) )  ) .   MINUS   {     ?var23  <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q17362920> .   } } GROUP BY  ?var21Label   HAVING  ( ( COUNT (* ) > "1"^^<http://www.w3.org/2001/XMLSchema#integer>  ) )    }
+}
