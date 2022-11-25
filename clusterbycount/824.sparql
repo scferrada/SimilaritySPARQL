@@ -1,0 +1,12 @@
+
+PREFIX sim:<http://sj.dcc.uchile.cl/sim#>
+PREFIX wdt:<http://www.wikidata.org/prop/direct/>
+SELECT (COUNT(*) AS ?c) WHERE {
+	?id1 wdt:P2146 ?h1 ;
+		wdt:P2248 ?n1 ;
+		wdt:P2244 ?u1 ;
+		wdt:P2243 ?b1 ;
+		wdt:P2213 ?x1 ;
+		wdt:P2233 ?j1 .
+
+}
